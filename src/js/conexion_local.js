@@ -1,5 +1,6 @@
 import '../scss/styles.scss'
 import * as bootstrap from 'bootstrap'
+import { smallAlertError, smallAlertSuccess } from './alerts'
 
 const URL = "http://localhost:3000/usuarios"
 const texto = document.getElementById("nombre")
@@ -64,9 +65,9 @@ async function guardarDatos() {
 
     if (solicitud.ok) {
         texto.value=""
-        alert(solicitud.statusText)
+        smallAlertSuccess(solicitud.statusText)
     } else {
-        alert(solicitud.statusText)
+        smallAlertError(solicitud.statusText)
     }
 
     consumirDatos()
@@ -86,9 +87,9 @@ async function actualizarDatos(idCache) {
     })
 
     if (solicitud.ok) {
-        alert(solicitud.statusText)
+        smallAlertSuccess(solicitud.statusText)
     } else {
-        alert(solicitud.statusText)
+        smallAlertError(solicitud.statusText)
     }
 
     idCache = undefined
@@ -104,9 +105,9 @@ async function eliminarDatos(id) {
     })
 
     if (solicitud.ok) {
-        alert(solicitud.statusText)
+        smallAlertSuccess(solicitud.statusText)
     } else {
-        alert(solicitud.statusText)
+        smallAlertError(solicitud.statusText)
     }
 
     consumirDatos()
