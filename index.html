@@ -12,12 +12,13 @@
     <h1>Funciones asíncronas y Apis</h1>
   </header>
   <main class="container d-flex flex-column justify-content-center gap-5">
-    <div class="d-flex justify-content-center">
+    <div class="d-flex d-none justify-content-center">
       <button id="Consumir" type="button" class="btn btn-primary">Consumir datos</button>
     </div>
    
-    <section class="d-flex justify-content-center gap-5">
-      <button id="Guardar" type="button" class=" btn btn-success">Guardar</button>
+    <section class="d-flex flex-column justify-content-center align-items-center gap-2 w-100">
+      <input class="form-control me-2 w-25 border"  placeholder="nombre" >
+      <button id="Guardar" type="button" class="w-25 btn btn-success">Guardar</button>
     </section>
 
 
@@ -29,7 +30,7 @@
           <th scope="col">opciones</th>
         </tr>
       </thead>
-      <tbody class="text-center">
+      <tbody class="text-center" id="tbody">
         <tr>
           <th scope="row">1</th>
           <td>Mark</td>
