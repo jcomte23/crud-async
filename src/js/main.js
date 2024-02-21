@@ -2,11 +2,11 @@ import '../scss/styles.scss'
 import * as bootstrap from 'bootstrap'
 
 // EJEMPLO UNO
-console.log("uno")
-console.log("dos")
-console.log("tres")
-console.log("cuatro")
-console.log("cinco")
+// console.log("uno")
+// console.log("dos")
+// console.log("tres")
+// console.log("cuatro")
+// console.log("cinco")
 
 // EJEMPLO DOS
 // const URL = "https://api.spacexdata.com/v3/launches"
