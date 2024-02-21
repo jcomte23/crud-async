@@ -33,10 +33,21 @@ async function consumirDatos() {
 }
 
 async function guardarDatos() {
-    const solicitud = await fetch(URL)
-    const datos = await solicitud.json()
-    console.clear()
-    console.table(datos)
+    const solicitud = await fetch(URL, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ nombre: "usuario" })
+    })
+    
+    if (solicitud.ok) {
+        alert(solicitud.statusText)
+    }else{
+        alert(solicitud.statusText)
+    }
+    
+    consumirDatos()
 }
 
 async function actualizarDatos() {
