@@ -2,7 +2,7 @@ import '../scss/styles.scss'
 import * as bootstrap from 'bootstrap'
 import { smallAlertError, smallAlertSuccess } from './alerts'
 
-const URL = "http://localhost:3000/usuarios"
+const URL = "http://localhost:3000/categories"
 const texto = document.getElementById("nombre")
 const tbody = document.getElementById("tbody")
 const Guardar = document.getElementById("Guardar")
@@ -40,7 +40,7 @@ async function consumirDatos() {
             `
         <tr>
           <td scope="row">${element.id}</td>
-          <td>${element.nombre}</td>
+          <td>${element.name}</td>
           <td>
             <button type="button" class=" btn btn-warning" data-id="${element.id}">Editar</button>
             <button type="button" class="btn btn-danger" data-id="${element.id}">Eliminar</button>
@@ -51,8 +51,9 @@ async function consumirDatos() {
 }
 
 async function guardarDatos() {
-    const usuario = {
-        nombre: texto.value
+    const category = {
+        name: texto.value,
+        image: "https://placeimg.com/640/480/any"
     }
 
     const solicitud = await fetch(URL, {
@@ -60,7 +61,7 @@ async function guardarDatos() {
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify(usuario)
+        body: JSON.stringify(category)
     })
 
     if (solicitud.ok) {
@@ -74,8 +75,9 @@ async function guardarDatos() {
 }
 
 async function actualizarDatos(idCache) {
-    const usuario = {
-        nombre: texto.value
+    const category = {
+        name: texto.value,
+        image: "https://placeimg.com/640/480/any"
     }
 
     const solicitud = await fetch(`${URL}/${idCache}`, {
@@ -83,7 +85,7 @@ async function actualizarDatos(idCache) {
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify(usuario)
+        body: JSON.stringify(category)
     })
 
     if (solicitud.ok) {
