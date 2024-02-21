@@ -5,7 +5,6 @@ const URL = "http://localhost:3000/usuarios"
 const texto = document.getElementById("nombre")
 const tbody = document.getElementById("tbody")
 const Guardar = document.getElementById("Guardar")
-const Actualizar = document.getElementById("Actualizar")
 let idCache
 
 document.addEventListener('DOMContentLoaded', consumirDatos)
@@ -17,13 +16,19 @@ tbody.addEventListener('click', (event) => {
 
     if (event.target.classList.contains("btn-warning")) {
         idCache = event.target.getAttribute("data-id")
-        actualizarDatos(idCache)
+        texto.value=event.target.parentElement.parentElement.querySelectorAll("td")[1].textContent
     }
 
 })
 
-Guardar.addEventListener('click', guardarDatos)
-Actualizar.addEventListener('click', actualizarDatos)
+Guardar.addEventListener('click', () => {
+    if (idCache==undefined) {
+        guardarDatos()
+    } else {
+        actualizarDatos(idCache)
+    }
+    
+})
 
 async function consumirDatos() {
     const solicitud = await fetch(URL)
@@ -33,7 +38,7 @@ async function consumirDatos() {
         tbody.innerHTML +=
             `
         <tr>
-          <th scope="row">${element.id}</th>
+          <td scope="row">${element.id}</td>
           <td>${element.nombre}</td>
           <td>
             <button type="button" class=" btn btn-warning" data-id="${element.id}">Editar</button>
@@ -58,6 +63,7 @@ async function guardarDatos() {
     })
 
     if (solicitud.ok) {
+        texto.value=""
         alert(solicitud.statusText)
     } else {
         alert(solicitud.statusText)
@@ -66,12 +72,12 @@ async function guardarDatos() {
     consumirDatos()
 }
 
-async function actualizarDatos() {
+async function actualizarDatos(idCache) {
     const usuario = {
         nombre: texto.value
     }
 
-    const solicitud = await fetch(URL, {
+    const solicitud = await fetch(`${URL}/${idCache}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json"
