@@ -1,21 +1,47 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Async Apis</title>
-  </head>
-  <body>
-    <header class="text-center">
-      <h1>Funciones asíncronas y Apis</h1>
-    </header>
-    <main class="container d-flex justify-content-center gap-5">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Async Apis</title>
+</head>
+
+<body>
+  <header class="text-center">
+    <h1>Funciones asíncronas y Apis</h1>
+  </header>
+  <main class="container d-flex flex-column justify-content-center gap-5">
+    <section class="d-flex justify-content-center gap-5">
       <button id="Consumir" type="button" class="btn btn-primary">Consumir datos (GET)</button>
-      <button id="Guardar" type="button" class="d-none btn btn-success">Guardar datos (POST)</button>
-      <button id="Actualizar" type="button" class="d-none btn btn-warning">Actualizar datos (PUT)</button>
-      <button id="Eliminar" type="button" class="d-none btn btn-danger">Eliminar datos (DELETE)</button>
-    </main>
-    <!-- <script type="module" src="./src/js/conexion_local.js"></script> -->
-    <script type="module" src="./src/js/main.js"></script>
-  </body>
+      <button id="Guardar" type="button" class=" btn btn-success">Guardar datos (POST)</button>
+     
+    </section>
+
+
+    <table class="table">
+      <thead class="text-center">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">nombre</th>
+          <th scope="col">opciones</th>
+        </tr>
+      </thead>
+      <tbody class="text-center">
+        <tr>
+          <th scope="row">1</th>
+          <td>Mark</td>
+          <td>
+            <button id="Actualizar" type="button" class=" btn btn-warning">Actualizar (PUT)</button>
+            <button id="Eliminar" type="button" class=" btn btn-danger">Eliminar (DELETE)</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </main>
+  <script type="module" src="./src/js/conexion_local.js"></script>
+  <!-- <script type="module" src="./src/js/main.js"></script> -->
+</body>
+
 </html>
