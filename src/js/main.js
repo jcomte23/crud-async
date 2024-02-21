@@ -1,41 +1,23 @@
 import '../scss/styles.scss'
 import * as bootstrap from 'bootstrap'
 
-const URL = "https://api.spacexdata.com/v3/launches"
-const Consumir = document.getElementById("Consumir")
-const Guardar = document.getElementById("Guardar")
-const Actualizar = document.getElementById("Actualizar")
-const Eliminar = document.getElementById("Eliminar")
+// EJEMPLO UNO
+console.log("uno")
+console.log("dos")
+console.log("tres")
+console.log("cuatro")
+console.log("cinco")
 
-Consumir.addEventListener('click',consumirDatos)
-Guardar.addEventListener('click',guardarDatos)
-Actualizar.addEventListener('click',actualizarDatos)
-Eliminar.addEventListener('click',eliminarDatos)
+// EJEMPLO DOS
+// const URL = "https://api.spacexdata.com/v3/launches"
+// const Consumir = document.getElementById("Consumir")
 
-async function consumirDatos() {
-    const solicitud = await fetch(URL)
-    const datos = await solicitud.json()
-    console.clear()
-    console.table(datos)
-}
+// Consumir.addEventListener('click',consumirDatos)
 
-async function guardarDatos() {
-    const solicitud = await fetch(URL)
-    const datos = await solicitud.json()
-    console.clear()
-    console.table(datos)
-}
+// async function consumirDatos() {
+//     const solicitud = await fetch(URL)
+//     const datos = await solicitud.json()
+//     console.clear()
+//     console.table(datos)
+// }
 
-async function actualizarDatos() {
-    const solicitud = await fetch(URL)
-    const datos = await solicitud.json()
-    console.clear()
-    console.table(datos)
-}
-
-async function eliminarDatos() {
-    const solicitud = await fetch(URL)
-    const datos = await solicitud.json()
-    console.clear()
-    console.table(datos)
-}
