@@ -3,6 +3,7 @@ import * as bootstrap from 'bootstrap'
 import { smallAlertError, smallAlertSuccess } from './alerts'
 
 const URL = "http://localhost:3000/categories"
+// const URL ="https://api.escuelajs.co/api/v1/categories"
 const texto = document.getElementById("nombre")
 const tbody = document.getElementById("tbody")
 const Guardar = document.getElementById("Guardar")
