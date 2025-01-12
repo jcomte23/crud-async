@@ -1,3 +1,9 @@
 {
-  "categories": []
+  "categories": [
+    {
+      "name": "musica",
+      "image": "https://placeimg.com/640/480/any",
+      "id": "dbe9"
+    }
+  ]
 }
