@@ -55,27 +55,17 @@ jobs:
       - name: Install dependencies
         run: npm install            # Comando para instalar las dependencias
 
-      # Paso 4: Cachear las dependencias de Node.js para mejorar el tiempo de ejecución
-      - name: Cache Node modules
-        uses: actions/cache@v3
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-modules-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-modules-
-
-      # Paso 5: Construir el proyecto con Vite
+      # Paso 4: Construir el proyecto con Vite
       - name: Build project
         run: npm run build          # Comando para generar los archivos estáticos
 
-      # Paso 6: Subir los archivos generados como un artefacto
+      # Paso 5: Subir los archivos generados como un artefacto
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3  # Acción para subir el artefacto
         with:
           path: dist                # Carpeta que contiene los archivos estáticos
 
-      # Paso 7: Desplegar en GitHub Pages
+      # Paso 6: Desplegar en GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment              # ID del paso para referenciar su salida
         uses: actions/deploy-pages@v4  # Acción para desplegar en GitHub Pages
-
