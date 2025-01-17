@@ -6,8 +6,6 @@ on:
   # Se ejecuta automáticamente cuando hay un push a la rama "main"
   push:
     branches: ["main"]
-
-  # Se ejecuta cuando hay un pull request hacia la rama "main"
   pull_request:
     branches: ["main"]
 
@@ -49,7 +47,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3  # Acción para configurar Node.js
         with:
-          node-version: 22          # Usamos la versión LTS (22) de Node.js
+          node-version: 22          # Versión de Node.js a instalar
 
       # Paso 3: Instalar las dependencias del proyecto
       - name: Install dependencies
