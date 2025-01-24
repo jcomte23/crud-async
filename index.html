@@ -2,89 +2,109 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="description"
-        content="Aplicación CRUD sencilla construida con JavaScript Vanilla que interactúa con una API pública para realizar operaciones de crear, leer, actualizar y eliminar. Aprende a usar funciones asíncronas para gestionar datos en una aplicación web.">
-  <meta name="keywords"
-        content="JavaScript CRUD, JavaScript Vanilla, API, Funciones Asíncronas, Vite, Bootstrap, Desarrollo Web, Frontend, Interacción con API, Proyecto Educativo">
-  <meta name="author" content="Javier Cómbita Téllez">
-  <meta name="sitedomain" content="https://jcomte23.github.io/crud-async">
-  <meta name="organization" content="Jcomtec">
-  <meta name="designer" content="Javier Cómbita Téllez">
-  <meta name="copyright" content="© 2025 Jcomte23. Todos los derechos reservados">
-  <meta name="robots" content="index,follow">
-  <meta name="googlebot" content="index,follow">
-  <meta name="revisit-after" content="15days">
-  <meta http-equiv="Content-Language" content="es">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description"
+          content="Aplicación CRUD sencilla construida con JavaScript Vanilla que interactúa con una API pública para realizar operaciones de crear, leer, actualizar y eliminar. Aprende a usar funciones asíncronas para gestionar datos en una aplicación web.">
+    <meta name="keywords"
+          content="JavaScript CRUD, JavaScript Vanilla, API, Funciones Asíncronas, Vite, Bootstrap, Desarrollo Web, Frontend, Interacción con API, Proyecto Educativo">
+    <meta name="author" content="Javier Cómbita Téllez">
+    <meta name="sitedomain" content="https://jcomte23.github.io/crud-async">
+    <meta name="organization" content="Jcomte23">
+    <meta name="designer" content="Javier Cómbita Téllez">
+    <meta name="copyright" content="©2025 Jcomte23. Todos los derechos reservados">
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="15days">
 
-  <!-- Open Graph -->
-  <meta property="og:site_name" content="Proyecto CRUD API">
-  <meta property="og:url" content="https://jcomte23.github.io/crud-async">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="CRUD ASYNC con JavaScript Vanilla">
-  <meta property="og:description"
-        content="Aplicación CRUD sencilla construida con JavaScript Vanilla que interactúa con una API pública para realizar operaciones de crear, leer, actualizar y eliminar.">
-  <meta property="og:locale" content="es_CO">
-  <meta property="og:image" content="https://jcomte23.github.io/images/crud.webp">
+    <!-- Open Graph -->
+    <meta property="og:site_name" content="Proyecto CRUD API">
+    <meta property="og:url" content="https://jcomte23.github.io/crud-async">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="CRUD ASYNC con JavaScript Vanilla">
+    <meta property="og:description"
+          content="Aplicación CRUD sencilla construida con JavaScript Vanilla que interactúa con una API pública para realizar operaciones de crear, leer, actualizar y eliminar.">
+    <meta property="og:locale" content="es_CO">
+    <meta property="og:image" content="https://jcomte23.github.io/images/crud.webp">
 
-  <meta property="og:image:width" content="400">
-  <meta property="og:image:height" content="400">
+    <meta property="og:image:width" content="400">
+    <meta property="og:image:height" content="400">
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="CRUD ASYNC con JavaScript Vanilla">
-  <meta name="twitter:description"
-        content="Aplicación CRUD sencilla construida con JavaScript Vanilla que interactúa con una API pública para realizar operaciones de crear, leer, actualizar y eliminar.">
-  <meta name="twitter:image" content="https://jcomte23.github.io/images/crud.webp">
-  <meta name="twitter:creator" content="@jcomte23">
-  <meta name="twitter:site" content="@jcomte23">
-  <meta name="twitter:url" content="https://jcomte23.github.io">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CRUD ASYNC con JavaScript Vanilla">
+    <meta name="twitter:description"
+          content="Aplicación CRUD sencilla construida con JavaScript Vanilla que interactúa con una API pública para realizar operaciones de crear, leer, actualizar y eliminar.">
+    <meta name="twitter:image" content="https://jcomte23.github.io/images/crud.webp">
+    <meta name="twitter:creator" content="@jcomte23">
+    <meta name="twitter:site" content="@jcomte23">
+    <meta name="twitter:url" content="https://jcomte23.github.io">
 
-  <!-- Bootstrap CSS -->
-  <link rel="icon" href="public/favicon.svg" type="image/svg+xml">
-  <meta name="theme-color" content="#007bff">
-  <title>CRUD ASYNC</title>
+    <!-- Bootstrap CSS -->
+    <link rel="icon" href="public/favicon.svg" type="image/svg+xml">
+    <meta name="theme-color" content="#007bff">
+    <title>CRUD ASYNC</title>
 </head>
 
 <body class="bg-light">
-  <header class="text-center">
-    <h1>Funciones asíncronas y Apis</h1>
-  </header>
-  <main class="container d-flex flex-column justify-content-center gap-5">
-    <div class="d-flex d-none justify-content-center">
-      <button id="Consumir" type="button" class="btn btn-primary">Consumir datos</button>
+<header class="navbar navbar-expand-md navbar-light">
+    <div class="container">
+        <!-- Branding -->
+        <a href="/" class="navbar-brand text-primary fw-bold fs-2">
+                Crud-Async
+        </a>
+
+        <!-- Toggle Button for Mobile -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar Links -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a href="#" class="nav-link text-primary text-capitalize">Lang</a>
+                </li>
+            </ul>
+        </div>
     </div>
-   
+</header>
+
+<main class="container d-flex flex-column justify-content-center gap-5">
+    <div class="d-flex d-none justify-content-center">
+        <button id="Consumir" type="button" class="btn btn-primary">Consumir datos</button>
+    </div>
+
     <section class=" flex-column justify-content-center align-items-center gap-2 w-100">
-      <input class="form-control me-2 w-25 border" id="nombre"  placeholder="nombre" >
-      <button id="Guardar" type="button" class="w-25 btn btn-success">Guardar</button>
+        <input class="form-control me-2 w-25 border" id="nombre" placeholder="nombre">
+        <button id="Guardar" type="button" class="w-25 btn btn-success">Guardar</button>
     </section>
 
 
     <table class="table table-striped table-hover table-bordered caption-top">
-      <caption>lista de categorias</caption>
-      <thead class="text-center">
+        <caption>lista de categorias</caption>
+        <thead class="text-center">
         <tr>
-          <th scope="col">id</th>
-          <th scope="col">nombre</th>
-          <th scope="col">opciones</th>
+            <th scope="col">id</th>
+            <th scope="col">nombre</th>
+            <th scope="col">opciones</th>
         </tr>
-      </thead>
-      <tbody class="text-center" id="tbody">
+        </thead>
+        <tbody class="text-center" id="tbody">
         <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>
-            <button id="Actualizar" type="button" class=" btn btn-warning">Editar</button>
-            <button type="button" class=" btn btn-danger" >Eliminar</button>
-          </td>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>
+                <button id="Actualizar" type="button" class=" btn btn-warning">Editar</button>
+                <button type="button" class=" btn btn-danger">Eliminar</button>
+            </td>
         </tr>
-      </tbody>
+        </tbody>
     </table>
-  </main>
-  <script type="module" src="./src/js/conexion_local.js"></script>
+</main>
+<script type="module" src="./src/js/conexion_local.js"></script>
 </body>
 
 </html>
