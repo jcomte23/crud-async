@@ -1,1 +1,11 @@
 @import "bootstrap/scss/bootstrap";
+
+.w-title {
+  width: 100%;
+}
+
+@media (min-width: 576px) {
+  .w-title {
+    width: 50%;
+  }
+}
