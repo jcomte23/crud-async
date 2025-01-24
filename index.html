@@ -77,32 +77,57 @@
         <button id="Consumir" type="button" class="btn btn-primary">Consumir datos</button>
     </div>
 
-    <section class=" flex-column justify-content-center align-items-center gap-2 w-100">
-        <input class="form-control me-2 w-25 border" id="nombre" placeholder="nombre">
-        <button id="Guardar" type="button" class="w-25 btn btn-success">Guardar</button>
+    <section class="d-flex flex-column justify-content-center align-items-center gap-3 w-100 py-4 bg-light">
+        <h2 class="text-center text-secondary">Agregar Categoría</h2>
+        <div class="d-flex gap-2 w-50">
+            <input
+                    class="form-control border border-secondary shadow-sm"
+                    id="nombre"
+                    placeholder="Nombre de la categoría"
+            >
+            <button
+                    id="Guardar"
+                    type="button"
+                    class="btn btn-success px-4 shadow-sm"
+            >
+                Guardar
+            </button>
+        </div>
     </section>
 
-
-    <table class="table table-striped table-hover table-bordered caption-top">
-        <caption>lista de categorias</caption>
-        <thead class="text-center">
-        <tr>
-            <th scope="col">id</th>
-            <th scope="col">nombre</th>
-            <th scope="col">opciones</th>
-        </tr>
-        </thead>
-        <tbody class="text-center" id="tbody">
-        <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>
-                <button id="Actualizar" type="button" class=" btn btn-warning">Editar</button>
-                <button type="button" class=" btn btn-danger">Eliminar</button>
-            </td>
-        </tr>
-        </tbody>
-    </table>
+    <section class="mt-4 container">
+        <table class="table table-striped table-hover table-bordered caption-top shadow-sm rounded">
+            <caption class="text-secondary fs-4">Lista de Categorías</caption>
+            <thead class="text-center table-dark">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Opciones</th>
+            </tr>
+            </thead>
+            <tbody class="text-center" id="tbody">
+            <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>
+                    <button
+                            id="Actualizar"
+                            type="button"
+                            class="btn btn-warning btn-sm me-2"
+                    >
+                        Editar
+                    </button>
+                    <button
+                            type="button"
+                            class="btn btn-danger btn-sm"
+                    >
+                        Eliminar
+                    </button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
 </main>
 <script type="module" src="./src/js/conexion_local.js"></script>
 </body>
